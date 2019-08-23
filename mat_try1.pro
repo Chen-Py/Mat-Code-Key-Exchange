@@ -25,15 +25,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        communication.cpp \
+        computing.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        private.cpp
 
 HEADERS += \
+        communication.h \
+        computing.h \
         main_algorithm.h \
-        mainwindow.h
+        mainwindow.h \
+        private.h
 
 FORMS += \
-        mainwindow.ui
+        communication.ui \
+        computing.ui \
+        mainwindow.ui \
+        private.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
