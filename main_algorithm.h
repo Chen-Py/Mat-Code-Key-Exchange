@@ -75,7 +75,7 @@ struct mat
 //--------------------------------------------------------------------------
 struct CPY
 {
-    int P;
+    long long P;
     mat Ps,Qs,Fir,ans;
     int key[11][11];
     void Step_1(int seed)
@@ -101,10 +101,10 @@ struct CPY
         }
         return;
     }
-    void Step_2(int p)
+    void Step_2(long long p)
     {
         P=p;
-        Ps=Fir^p;
+        Ps=Fir^P;
         return;
     }
     void Step_3()
@@ -119,9 +119,9 @@ struct CPY
             for(int j=1;j<=5;j++)
             {
                 if(ans.m[i][j]==0)key[i][j]=1;
-                if(ans.m[i][j]==1)key[11-i][j]=1;
+                if(ans.m[i][j]==1)key[j][11-i]=1;
                 if(ans.m[i][j]==2)key[11-i][11-j]=1;
-                if(ans.m[i][j]==3)key[i][11-j]=1;
+                if(ans.m[i][j]==3)key[11-j][i]=1;
             }
         }
         return;
